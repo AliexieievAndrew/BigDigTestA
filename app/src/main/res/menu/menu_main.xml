@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app = "http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:icon="@drawable/ic_line_weight_black_24dp"
+        android:id="@+id/action_sort_status"
+        android:orderInCategory="1"
+        android:title="@string/action_sort_by_status"
+        app:showAsAction="always" />
+
+    <item
+        android:icon="@drawable/ic_access_time_black_24dp"
+        android:id="@+id/action_sort_time"
+        android:orderInCategory="2"
+        android:title="@string/action_sort_by_time"
+        app:showAsAction="always" />
+</menu>
