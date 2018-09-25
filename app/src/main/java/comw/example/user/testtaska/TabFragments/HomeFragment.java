@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import comw.example.user.testtaska.R;
 
@@ -40,8 +41,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick (View view) {
-        Intent intent = new Intent("IntentFilterImageActivity");
-        intent.putExtra("link", textImageLink.getText().toString());
-        startActivity(intent);
+        if (!isLink(textImageLink.getText().toString())){
+            Toast.makeText(getContext(),"должна быть ссылка",Toast.LENGTH_LONG).show();
+        } else {
+            Intent intent = new Intent("IntentFilterImageActivity");
+            intent.putExtra("link", textImageLink.getText().toString());
+            startActivity(intent);
+        }
+    }
+    private boolean isLink(String link){
+        String regEx = "^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
+        return link.matches(regEx);
     }
 }
